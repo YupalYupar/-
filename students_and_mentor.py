@@ -37,7 +37,7 @@ class Reviewer(Mentor):
         else:
             return 'Ошибка'
 
-first_student = Student('Ruoy', 'Eman', 'your_gender')
+first_student = Student('Danny', 'DeVito', 'male')
 first_student.courses_in_progress += ['Python']
 
 first_reviever = Reviewer('Indiana', 'Jones')
@@ -46,13 +46,13 @@ first_reviever.courses_attached += ['Python']
 first_lecturer = Lecturer('Jany', 'Fox')
 first_lecturer.courses_attached += ['Python']
 
-first_reviever.rate_hw(first_student, 'Python', 10)
-first_reviever.rate_hw(first_student, 'Python', 10)
-first_reviever.rate_hw(first_student, 'Python', 10)
+first_reviever.rate_hw(first_student, 'Python', 9)
+first_reviever.rate_hw(first_student, 'Python', 9)
+first_reviever.rate_hw(first_student, 'Python', 9)
 
-first_student.rate_hw(first_lecturer, 'Python', 9)
-first_student.rate_hw(first_lecturer, 'Python', 9)
-first_student.rate_hw(first_lecturer, 'Python', 9)
+first_student.rate_hw(first_lecturer, 'Python', 10)
+first_student.rate_hw(first_lecturer, 'Python', 10)
+first_student.rate_hw(first_lecturer, 'Python', 10)
 
-print(first_student.grades)
-print(first_lecturer.grades_from_students)
+print("Оценки студента от лектора-", first_student.grades)
+print("Оцеки лектора от студента-", first_lecturer.grades_from_students)
