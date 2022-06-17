@@ -22,6 +22,12 @@ class Mentor:
         self.surname = surname
         self.courses_attached = []
 
+
+class Lecturer(Mentor):
+    grades_from_students = {}
+
+
+class Reviewer(Mentor):
     def rate_hw(self, student, course, grade):
         if isinstance(student, Student) and course in self.courses_attached and course in student.courses_in_progress:
             if course in student.grades:
@@ -31,33 +37,18 @@ class Mentor:
         else:
             return 'Ошибка'
 
-class Lecturer(Mentor):
-    grades_from_students = {}
-
-
-class Reviewer(Mentor):
-    pass
-    # def rate_hw(self, student, course, grade):
-    #     if isinstance(student, Student) and course in self.courses_attached and course in student.courses_in_progress:
-    #         if course in student.grades:
-    #             student.grades[course] += [grade]
-    #         else:
-    #             student.grades[course] = [grade]
-    #     else:
-    #         return 'Ошибка'
-
 first_student = Student('Ruoy', 'Eman', 'your_gender')
 first_student.courses_in_progress += ['Python']
 
-first_mentor = Reviewer('Some', 'Buddy')
-first_mentor.courses_attached += ['Python']
+first_reviever = Reviewer('Indiana', 'Jones')
+first_reviever.courses_attached += ['Python']
 
 first_lecturer = Lecturer('Jany', 'Fox')
 first_lecturer.courses_attached += ['Python']
 
-first_mentor.rate_hw(first_student, 'Python', 10)
-first_mentor.rate_hw(first_student, 'Python', 10)
-first_mentor.rate_hw(first_student, 'Python', 10)
+first_reviever.rate_hw(first_student, 'Python', 10)
+first_reviever.rate_hw(first_student, 'Python', 10)
+first_reviever.rate_hw(first_student, 'Python', 10)
 
 first_student.rate_hw(first_lecturer, 'Python', 9)
 first_student.rate_hw(first_lecturer, 'Python', 9)
